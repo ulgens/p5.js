@@ -18,12 +18,12 @@ jobs:
       INPUT_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       # 1. Setup
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - uses: actions/setup-node@3235b876344d2a9aa001b8d1453c930bba69e610 # v3.9.1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
-          node-version: 22 # Keep at 22 purposefully for v1
+          node-version: 24 # Keep at 22 purposefully for v1
       - name: Check prerelease
         id: semver
         shell: bash
@@ -68,7 +68,7 @@ jobs:
 
       # 3. Release p5.js
       - name: Create GitHub release
-        uses: softprops/action-gh-release@de2c0eb89ae2a093876385947365aca7b0e5f844 # v0.1.15
+        uses: softprops/action-gh-release@3d0d9888cb7fd7b750713d6e236d1fcb99157228 # v3.0.2
         with:
           draft: true
           prerelease: ${{ steps.semver.outputs.is-prerelease == 'true' }}
@@ -77,14 +77,14 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Publish to NPM
         if: ${{ steps.semver.outputs.is-prerelease != 'true' }}
-        uses: JS-DevTools/npm-publish@0f451a94170d1699fd50710966d48fb26194d939 # v1.4.3
+        uses: JS-DevTools/npm-publish@0fd2f4369c5d6bcfcde6091a7c527d810b9b5c3f # v4.1.5
         with:
           token: ${{ secrets.NPM_TOKEN }}
           
       # 4. Update p5.js website
       - name: Clone p5.js website
         if: ${{ steps.semver.outputs.is-prerelease != 'true' }}
-        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: processing/p5.js-website
           path: website
@@ -111,7 +111,7 @@ jobs:
           git commit -m "Update p5.js to ${{ github.ref_name }}"
       - name: Push updated website repo
         if: ${{ steps.semver.outputs.is-prerelease != 'true' }}
-        uses: ad-m/github-push-action@40bf560936a8022e68a3c00e7d2abefaf01305a6 # v0.6.0
+        uses: ad-m/github-push-action@881a6320fdb16eb5318c5054f31c218aec2b324c # v1.3.0
         with:
           github_token: ${{ secrets.ACCESS_TOKEN }}
           branch: v1
@@ -121,7 +121,7 @@ jobs:
       # 5. Update Bower files
       - name: Checkout Bower repo
         if: ${{ steps.semver.outputs.is-prerelease != 'true' }}
-        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: processing/p5.js-release
           path: bower
@@ -143,7 +143,7 @@ jobs:
           git commit -m "Update p5.js to ${{ github.ref_name }}"
       - name: Push updated Bower repo
         if: ${{ steps.semver.outputs.is-prerelease != 'true' }}
-        uses: ad-m/github-push-action@40bf560936a8022e68a3c00e7d2abefaf01305a6 # v0.6.0
+        uses: ad-m/github-push-action@881a6320fdb16eb5318c5054f31c218aec2b324c # v1.3.0
         with:
           github_token: ${{ secrets.ACCESS_TOKEN }}
           branch: master
