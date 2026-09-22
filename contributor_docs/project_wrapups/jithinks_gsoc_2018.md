@@ -121,10 +121,3 @@ I'm extremely thankful to Processing Foundation for having the faith in me and g
 I've started this project and doing it with my friend [Anupam Asok](https://github.com/Anu-Asok). I'm so grateful to him for being with me in the development of this project.
 
 I'm so grateful to [Andrew Mead](https://github.com/andrewjmead) and his course in udemy Full Stack Web Development using Meteor https://www.udemy.com/meteor-react/ for it has helped me greatly and Andrew has responded to each and every queries of mine.
-
-
-
-
-
-
-

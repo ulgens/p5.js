@@ -111,5 +111,3 @@ https://github.com/processing/p5.js/blob/main/contributor_docs/project_wrapups/j
 * [Everyone Can Code: A creative coding curriculum for students with low computer literacy](https://medium.com/processing-foundation/anyone-can-code-a-creative-coding-curriculum-for-students-with-low-computer-literacy-69e121149abc) by Niklas Peters, 2017
 * [Creative Coding with p5.js for Prisons in Washington State](https://medium.com/processing-foundation/creative-coding-with-p5-js-for-prisons-in-washington-state-3bd1d342d769) by Susan Evans, 2017
 * [Announcing our 2017 Processing Foundation Fellows](https://medium.com/processing-foundation/announcing-our-2017-processing-foundation-fellows-8b9e7c8bd2f)
-
-

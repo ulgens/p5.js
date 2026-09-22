@@ -50,4 +50,3 @@ More information on how these accessibility features work is available in the [w
 I am grateful to Kate Hollenbach for their guidance, feedback and assistance, to Lauren McCarthy for their feedback and to Claire Kearney-Volpe for helping me come up with this project. Thanks to Sina Bahram for their input —our conversations at 2019 p5.js Contributors Conference inspired the describe() and describeElement() functions—, and to Akshay Padte for their advice on unit testing. This GSoC project would not have been possible without Chancey Fleet and Claire (who started thinking of ways to make p5.js sketches screen reader accessible in late 2015), the work of Mathura Govindarajan, and of many other contributors and supporters in the p5.js community.
 
 :heart: 
-
